@@ -1,1 +1,1 @@
-# CACMTrecEvalFromR
+# CACMTrecEvalFromRwithSolr
