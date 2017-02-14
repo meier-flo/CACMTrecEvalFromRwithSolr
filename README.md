@@ -1,6 +1,6 @@
 # CACM TrecEval From R with Solr
 
-The R files from this repo are wrapper functions that allow you to do Information Retrieval experiments using the [CACM collection](https://ecommons.cornell.edu/handle/1813/6401) from R using [Apache Solr](http://lucene.apache.org/solr/). 
+The R files from this repo are functions that allow you to do simple Information Retrieval experiments using the [CACM collection](https://ecommons.cornell.edu/handle/1813/6401) from R with [Apache Solr](http://lucene.apache.org/solr/). 
 
 For connecting to the Solr server and doing basic indexing and querying the R solr client [Solrium](https://github.com/ropensci/solrium) is used.
 
