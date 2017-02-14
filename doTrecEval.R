@@ -18,7 +18,6 @@ cacm.docs<-parseCacmAll("path/to/doc/file")
 makeMultipleIndexes(3,"cacm_config","cacm_core",cacm.docs) 
 
 #deleteMultipleIndexes(3,"cacm_core")
-
 #reIndexMultipleIndexes(3,"cacm_core",test.data)
 
 ######## Read in the  Queries
