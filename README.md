@@ -1,7 +1,9 @@
 # CACM TrecEval From R with Solr
 
 The R files from this repo are wrapper functions that allow you to do Information Retrieval experiments using the [CACM collection](https://ecommons.cornell.edu/handle/1813/6401) from R using [Apache Solr](http://lucene.apache.org/solr/). 
+
 For connecting to the Solr server and doing basic indexing and querying the R solr client [Solrium](https://github.com/ropensci/solrium) is used.
+
 The aim of this project is to use it in undergrad IR teaching to give students a feel of how different combinations of Tokenizers and Filters from Solr effect retrieval quality.
 
 # Setup
@@ -59,7 +61,7 @@ makeMultipleIndexes(3,"cacm_config","cacm_core",cacm.docs)
 
 Import the queries from the CACM test set:
 ```{r, include=F,show=T}
-queries <- read_delim("~/Dropbox/Lehre/SS17/VSIRSS17/cacm/title.query", "\t", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
+queries <- read_delim("cacm/title.query", "\t", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
 colnames(queries)<-"Query"
 queries$Query<-gsub('[[:digit:]]+', '', queries$Query)
 ```
@@ -69,7 +71,7 @@ queryAndWriteResults(3,"cacm_core",queries)
 ```
 Nex call ```trec_eval``` to measure the result of your cores which gives you precision, recall etc. The ```callTrecEval``` script uses the list of documents relevant to each query from the file ```cacm.qrels```. It will write a trec_eval result file for every file in ```results```. You will note that ```trec_eval```is called with parameter ```-q```` which gives the result for every query.
 ```{r, include=F,show=T}
-callTrecEval("~/Dropbox/Lehre/SS17/VSIRSS17/cacm/cacm.qrels","~/Dropbox/Lehre/SS17/VSIRSS17/results/","cacm_core","trec_eval_results")
+callTrecEval("/cacm/cacm.qrels","results","cacm_core","trec_eval_results")
 ```
 Finally make one big data.frame with the results of all trec_eval result files by calling ```loadTrecEvalResults```
 ```{r, include=F,show=T}
