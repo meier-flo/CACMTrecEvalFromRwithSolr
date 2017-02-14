@@ -77,9 +77,8 @@ Finally make one big data.frame with the results of all trec_eval result files b
 ```{r, include=F,show=T}
 results<-loadTrecEvalResults("trec_eval_results")
 ```
-Based on the results you can make nifty plots like these:
+Based on the results you can make nifty topic by topic comparison plots like these:
 
 ![Result Plots from The Solr CACM runs](https://github.com/meier-flo/CACMTrecEvalFromRwithSolr/blob/master/cacm-results.png)
 
-This are topic by topic comparisons so the X-Axis is different for each plot ...
 
